@@ -7,6 +7,8 @@
 - 忠实来源：先完整整理，再进行结构化改写；人物、时间、数字和公司公告需要核查。
 - 可直接发布：生成标题、摘要、低 AI 感无字封面、正文配图方案，以及可复制到微信公众号编辑器的内联样式 HTML。
 
+**[下载可直接安装的 v1.0.0 ZIP](https://github.com/jiangyifan587/gade-content-to-wechat/releases/download/v1.0.0/gade-content-to-wechat-skill-v1.0.0.zip)**
+
 ## 主要能力
 
 - 支持 YouTube、Bilibili、播客、访谈、字幕、逐字稿、新闻与公司公告等来源
@@ -31,7 +33,7 @@ cp -R gade-content-to-wechat/gade-content-to-wechat ~/.codex/skills/
 
 ### 方法二：下载 ZIP
 
-在 GitHub 仓库页面点击 **Code → Download ZIP**，解压后，把其中的 `gade-content-to-wechat` 文件夹复制到：
+下载上方的安装包，或在 GitHub 仓库页面点击 **Code → Download ZIP**。解压后，把其中的 `gade-content-to-wechat` 文件夹复制到：
 
 ```text
 ~/.codex/skills/
