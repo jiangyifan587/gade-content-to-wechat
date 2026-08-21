@@ -1,6 +1,6 @@
 ---
 name: gade-content-to-wechat
-description: Convert a video/audio link, uploaded media, subtitle or transcript, news/article URL, or user-provided source text into a source-faithful Chinese GADE-style WeChat Official Account article. Use when the user asks to 整理视频、把 YouTube/Bilibili/播客/访谈改写成公众号文章、把新闻或公司公告改成公众号文章、核查人物时间数字、生成标题摘要、制作低 AI 感无字封面、规划或制作正文配图、输出可复制微信公众号 HTML，or run the complete source-to-WeChat workflow. Distinguish source facts, quotations, publisher viewpoints, and external verification; do not claim complete coverage unless the full source or a sufficiently complete transcript was inspected.
+description: Convert a video/audio link, uploaded media, subtitle or transcript, news/article URL, or user-provided source text into a source-faithful Chinese GADE-style WeChat Official Account article. Use when the user asks to 整理视频、把 YouTube/Bilibili/播客/访谈改写成公众号文章、把新闻或公司公告改成公众号文章、核查人物时间数字、生成标题摘要、制作低 AI 感无字封面、规划或制作正文配图、输出可复制微信公众号 HTML，or run the complete source-to-WeChat workflow. Also use for 公众号排版、只排版、合并碎段、调整微信预览、处理两端缩进或落款宽度. Distinguish source facts, quotations, publisher viewpoints, and external verification; do not claim complete coverage unless the full source or a sufficiently complete transcript was inspected.
 ---
 
 # GADE Content to WeChat
@@ -13,11 +13,11 @@ Turn videos, news, articles, transcripts, and supplied text into a traceable Chi
 
 Read the relevant files completely before acting:
 
-- Always read `references/source-workflow.md` to select the source route and verification standard.
-- Always read `references/editorial-workflow.md` before drafting or revising the article.
+- Read `references/source-workflow.md` for source retrieval, verification, `完整流程`, `只整理`, or `事实核查`.
+- Read `references/editorial-workflow.md` before drafting, rewriting, or structurally revising the article. It is optional for a wording-preserving `只排版` request.
 - Read `references/visual-workflow.md` when producing titles, summaries, covers, body images, or image recommendations.
 - Read `references/style-guide.md` when creating or revising the WeChat HTML.
-- Use `assets/wechat-template.html` as the HTML shell.
+- Use `assets/wechat-template.html` as the complete HTML shell. When manual two-side indentation requires split delivery, also use `assets/wechat-body-only-template.html` and `assets/wechat-footer-only-template.html`.
 - Use `assets/gade-brand-reference.png` only as an optional brand-language reference, never as a mandatory cover palette or article image.
 
 ## Modes
@@ -27,7 +27,7 @@ Choose the smallest mode that satisfies the request:
 - `完整流程` (default): source acquisition, structured dossier, verification, rewrite, title and summary, cover, body-image plan, HTML, and QA.
 - `只整理`: comprehensive source-faithful notes; keep video timecodes when available.
 - `只改写`: rewrite a transcript, article, or supplied notes without retrieving a new source.
-- `只排版`: preserve wording and create GADE copy-ready HTML.
+- `只排版`: preserve wording and claims, skip source retrieval and substantive rewriting, and create GADE copy-ready HTML.
 - `事实核查`: verify names, roles, dates, numbers, quotations, and announcements with authoritative sources.
 - `只配图`: design or produce the cover and body-image package from an existing finished article.
 
@@ -36,6 +36,8 @@ Choose the smallest mode that satisfies the request:
 ### 1. Route the source
 
 Classify the input as video/audio, transcript/subtitles, news/article URL, official announcement, or supplied text. Follow the matching route in `references/source-workflow.md`.
+
+For `只排版`, treat the supplied text as the complete working source. Do not retrieve or fact-check a new source unless the user requests it.
 
 For videos, do not infer complete content from the title, thumbnail, description, chapters, search snippets, or memory. Obtain the audiovisual source or a sufficiently complete transcript before claiming a complete整理.
 
@@ -102,6 +104,16 @@ Follow `references/style-guide.md` and use `assets/wechat-template.html`.
 - Use inline styles only. Do not use scripts, external fonts, gradients, or forced body backgrounds.
 - Remove all Markdown syntax from final HTML and use `<strong>` for intended emphasis.
 - Do not embed local images by default because clipboard transfer may drop them. Deliver image files separately with exact insertion points and captions.
+- In `只排版`, preserve every claim, caveat, source attribution, and argument order. Merge sentence fragments into logical paragraphs, but never shorten or summarize unless requested.
+
+Treat browser-to-WeChat transfer as a sanitizing boundary. Inline typography, centering, and borders may survive while padding, margins, percentage-width wrappers, spacer tables, and transparent side borders do not. Do not promise that HTML can force WeChat's native `两端缩进` setting or keep stacking CSS workarounds after a mobile preview disproves them.
+
+When the user requests native two-side indentation, or a mobile preview shows that the inset was lost, keep the complete HTML and additionally deliver:
+
+- `*-body-only.html`: GADE opening divider, article body, and source note.
+- `*-footer-only.html`: engagement prompt, centered `62%` green rule, `— 完 —`, star prompt, and community CTA.
+
+Tell the user to paste body-only first, select only that inserted material in WeChat, and apply the requested native indentation such as `8`. Then paste footer-only at the end without selecting or re-indenting the complete article. Keep title, summary, author, cover, and account card as native WeChat fields or components.
 
 ### 7. Validate and deliver
 
@@ -113,6 +125,7 @@ Pass only when:
 - no source claim is invented, strengthened, or stripped of a material caveat;
 - title and summary are not repeated inside the HTML;
 - HTML tags balance, styling is inline, and Markdown markers are absent;
+- for split delivery, the visible text of body-only followed by footer-only matches the complete HTML in order, without omissions, duplication, or a second source note;
 - the cover passes original-size, thumbnail, wide-crop, square-crop, low-AI-look, and artifact checks;
 - source and image attribution or licensing caveats are stated;
 - source coverage is reported honestly as complete, near-complete, partial, or blocked.
@@ -126,6 +139,13 @@ Place the publishable package in one versioned output directory:
 <slug>-wechat.html
 cover/<slug>-cover-wide.png
 cover/<slug>-cover-square.png
+```
+
+When manual two-side indentation is requested, additionally deliver:
+
+```text
+<slug>-body-only.html
+<slug>-footer-only.html
 ```
 
 Add finished body-image files only when the user requested them or suitable official/user-supplied assets are available. Keep the title package, summary, cover note, manuscript, body-image plan, source note, citations, and unresolved caveats together in the Markdown file. Keep the HTML limited to the publishable body.
@@ -143,4 +163,5 @@ Tell the user:
 - whether images are generated, user-supplied, or official-source assets;
 - the winning cover score and crop compatibility;
 - any unresolved ambiguity or rights caveat;
+- whether normal or split-copy delivery was used;
 - how to copy the HTML into WeChat and which elements must be inserted manually.

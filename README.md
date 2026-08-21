@@ -2,12 +2,14 @@
 
 把视频、音频、字幕、访谈、新闻链接或原始文本，整理并改写成可发布的中文微信公众号文章。
 
+从 `v1.1.0` 起，本 Skill 已合并 `gade-wechat-formatter` 的排版、微信预览与两端缩进能力，是 GADE 内容整理和公众号排版的唯一主入口。
+
 这个 Codex Skill 强调两点：
 
 - 忠实来源：先完整整理，再进行结构化改写；人物、时间、数字和公司公告需要核查。
 - 可直接发布：生成标题、摘要、低 AI 感无字封面、正文配图方案，以及可复制到微信公众号编辑器的内联样式 HTML。
 
-**[下载可直接安装的 v1.0.0 ZIP](https://github.com/jiangyifan587/gade-content-to-wechat/releases/download/v1.0.0/gade-content-to-wechat-skill-v1.0.0.zip)**
+**[下载可直接安装的 v1.1.0 ZIP](https://github.com/jiangyifan587/gade-content-to-wechat/releases/download/v1.1.0/gade-content-to-wechat-skill-v1.1.0.zip)**
 
 ## 主要能力
 
@@ -19,6 +21,8 @@
 - 封面默认无文字，并优先采用纪实、编辑摄影或克制的概念视觉，降低 AI 感
 - 规划或制作正文配图
 - 输出适配微信公众号编辑器的内联样式 HTML
+- 也可只排版已有正文，合并碎段并保留原文事实与结构
+- 支持微信原生“两端缩进”的正文/落款分开复制方案
 
 ## 安装
 
@@ -59,6 +63,24 @@ cp -R gade-content-to-wechat/gade-content-to-wechat ~/.codex/skills/
 
 如果已经有逐字稿或原文，直接粘贴内容即可。
 
+已有成稿只需要排版时，仍然使用同一个 Skill：
+
+```text
+使用 $gade-content-to-wechat，只排版下面的文章。
+保留原文完整，正文使用微信原生“两端缩进 8”，落款不缩进。
+```
+
+## 微信“两端缩进”兼容方案
+
+微信复制粘贴可能保留字体、居中和边框，却清洗容器内边距、子元素边距、百分比宽度、透明边框或占位表格。因此，Skill 不会用叠加 CSS 来假装微信原生缩进。
+
+需要手动缩进时，会在完整 HTML 之外同时交付：
+
+1. `*-body-only.html`：开场分隔线、正文和来源说明。
+2. `*-footer-only.html`：点赞转发提示、绿色横线、完结语、星标和社区 CTA。
+
+先粘贴正文稿，只选中正文并在微信中应用“两端缩进 8”；再将落款稿粘贴到末尾，不要重新全选。这样可避免标准落款和 `62%` 宽绿色横线被二次压缩。
+
 ## 默认交付内容
 
 1. 来源信息与事实核查说明
@@ -77,7 +99,9 @@ gade-content-to-wechat/
 │   └── openai.yaml
 ├── assets/
 │   ├── gade-brand-reference.png
-│   └── wechat-template.html
+│   ├── wechat-template.html
+│   ├── wechat-body-only-template.html
+│   └── wechat-footer-only-template.html
 └── references/
     ├── editorial-workflow.md
     ├── source-workflow.md

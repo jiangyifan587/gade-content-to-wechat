@@ -36,6 +36,8 @@ For article HTML, keep the background transparent/white so WeChat dark mode can 
 
 Use justified text for the body and centered text only for dividers and closing CTA.
 
+The `22px` horizontal padding controls the local HTML preview. It is not a guarantee that WeChat will preserve an equivalent inset after browser copy and paste.
+
 ## Paragraph rules
 
 - Merge adjacent sentences that advance the same idea.
@@ -74,6 +76,19 @@ Use the following wording unless the user supplies alternatives:
 
 Style the green rule at `62%` content width, centered, `3px`, color `#2F7B65`. Keep the account card outside the HTML; it is a WeChat-native component.
 
+## WeChat paste and manual two-side indentation
+
+WeChat may preserve inline text styles, centering, and borders while discarding layout techniques used to simulate side indentation. In validated mobile previews, outer padding, per-block margins or padding, percentage-width centered blocks, transparent side borders, and three-cell spacer tables did not reliably preserve the requested inset. Treat this as editor sanitization, not as a reason to widen the footer rule or layer on more CSS hacks.
+
+If the user wants a native two-side indentation value such as `8`, keep the complete HTML and additionally provide:
+
+1. `*-body-only.html`: GADE opening divider, every article section, and the source note.
+2. `*-footer-only.html`: engagement prompt, green rule, `— 完 —`, star prompt, and community CTA.
+
+Use `assets/wechat-body-only-template.html` and `assets/wechat-footer-only-template.html`. The split boundary is immediately after the source note and before `如果这篇文章对你有启发`. Paste body-only first, select only that material in WeChat, and apply the native indentation. Paste footer-only afterward without selecting or re-indenting the full article. This preserves the footer's centered layout and keeps its `62%` green rule from shrinking.
+
+Do not include the title, summary, author, cover, original/reprint declaration, or account card in the split files; those remain native WeChat fields or components. Do not use split delivery when the user has not asked for manual indentation and the normal complete HTML already pastes correctly.
+
 ## Long-article image rhythm
 
 For articles with 8 or more sections, recommend three images:
@@ -90,4 +105,5 @@ Images should be editorial, restrained, and consistent with the selected topic p
 - Check that no paragraph is isolated merely because the source had a line break.
 - Check that orange is muted terracotta, not bright red-orange.
 - Check that the footer rule is not full width.
+- For split delivery, verify that body-only plus footer-only reproduces the complete HTML's visible text in the same order, with balanced tags and no duplicated source note or CTA.
 - Review mobile screenshots when possible; desktop preview alone is insufficient for final spacing judgment.
