@@ -1,0 +1,121 @@
+# 公众号改写、交付与质检
+
+## Internal working materials
+
+Create a source dossier and editorial plan before drafting. Keep them internal unless the user requests evidence.
+
+The editorial plan must include:
+
+- intended reader and one-sentence promise;
+- source type and coverage level;
+- central question and article angle;
+- one recommended title and four alternatives;
+- 60–120 Chinese-character summary;
+- opening hook;
+- numbered outline mapped to source locations or verified claims;
+- conclusion boundary;
+- cover and body-image direction.
+
+## Rewrite standard
+
+Write a faithful feature article, not a transcript or article disguised by synonym replacement.
+
+- Reorganize around the reader's main question.
+- Preserve the source's facts, reasoning, evidence, examples, qualifications, and disagreement.
+- Preserve who said what and the original level of certainty.
+- Explain acronyms and specialist terms on first use.
+- Use 2–3 sentences per paragraph and one idea per paragraph.
+- Use numbered sections for long articles, normally 5–10.
+- Prefer paraphrase; use only short quotations whose wording matters.
+- Avoid generic AI prose, inflated metaphors, repetitive rhetorical questions, and unsupported predictions.
+- End with a source-grounded implication or open question, not a new thesis.
+
+For news, distinguish event chronology from analysis. For interviews, preserve speaker attribution and follow the source's argumentative sequence unless a clearer thematic reorganization remains traceable.
+
+## Title package
+
+Return one recommended title and four genuinely different alternatives:
+
+1. Core fact or question.
+2. Mechanism or explanatory angle.
+3. Person, organization, or product angle when central.
+4. Grounded tension or contrast.
+5. Restrained implication.
+
+Prefer specificity over hype. Avoid unsupported superlatives, fake breaking-news language, and stronger certainty than the source.
+
+## Summary
+
+Write one 60–120 Chinese-character summary that adds context rather than repeating the title. Identify the source and central mechanism when useful. Do not add promotional conclusions.
+
+## Source notes
+
+For a public video:
+
+```text
+本文根据【平台/栏目】视频《【标题】》的公开字幕与视频内容整理改写。为便于阅读，对访谈内容进行了结构化编辑与语言精简，未改变嘉宾原意；如有时间点或术语歧义，以原视频为准。
+```
+
+For a news or official article:
+
+```text
+本文根据【发布方】于【日期】发布的《【标题】》整理改写，并参考文中链接及相关权威资料核查人物、时间、数字与公告。为便于阅读，对信息结构和表述进行了重新组织；涉及公司观点、案例效果与预测的内容均保留发布方归属。
+```
+
+For supplied text:
+
+```text
+本文根据用户提供的《【标题】》原文整理改写。为便于阅读，对段落结构与语言表达进行了编辑，未增加与原文无关的结论。
+```
+
+When coverage is partial, replace the complete-source wording with an explicit limitation.
+
+## Publishing package
+
+Keep these fields in one article Markdown file:
+
+```text
+推荐标题：
+备选标题：
+摘要：
+作者建议：
+封面图与制作说明：
+完整正文：
+正文配图计划：
+来源说明与引用：
+未解决问题：
+```
+
+Keep the final HTML limited to the article body. The native WeChat title, author, summary, cover, original/reprint declaration, and account card stay outside the HTML.
+
+## Traceability QA
+
+Maintain an internal map:
+
+| Article section | Source location | Main source points | Verification/additions |
+|---|---|---|---|
+
+Pass only if:
+
+- every substantive article claim has a source location or external citation;
+- every material source section is represented or deliberately excluded with a reason;
+- facts, quotations, company claims, and publisher opinions remain distinguishable;
+- qualifiers, disagreement, and uncertainty are retained;
+- names, roles, dates, numbers, and quotations are consistent;
+- the conclusion introduces no unsupported thesis.
+
+## HTML QA
+
+- no Markdown markers, heading syntax, or fenced code remain;
+- all styling is inline;
+- opening and closing tags balance;
+- title and summary are not repeated inside the body;
+- body uses readable mobile typography and has no horizontal overflow;
+- the `GADE Insights` divider uses selectable text and survives clipboard transfer;
+- no fake account card or production placeholder appears;
+- local images are delivered separately unless the user explicitly requests embedded remote images;
+- source note and closing block are present unless the user opts out.
+
+## Delivery report
+
+Report coverage as `完整`, `接近完整`, `部分`, or `受阻`. Name the actual source material accessed. List final file paths, image provenance, cover crop status and score, unresolved facts, and any rights caveat. Explain that users should open the HTML in Safari or Chrome, copy the rendered page, paste it into WeChat, then upload cover and body images separately.

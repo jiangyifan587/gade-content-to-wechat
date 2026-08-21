@@ -1,0 +1,4 @@
+interface:
+  display_name: "GADE 内容转公众号"
+  short_description: "把视频、新闻和原文转成可发布的 GADE 公众号文章"
+  default_prompt: "Use $gade-content-to-wechat to turn this source into a faithful GADE-style WeChat article with a cover, image plan, and copy-ready HTML."
