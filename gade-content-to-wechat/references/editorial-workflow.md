@@ -32,6 +32,21 @@ Write a faithful feature article, not a transcript or article disguised by synon
 
 For news, distinguish event chronology from analysis. For interviews, preserve speaker attribution and follow the source's argumentative sequence unless a clearer thematic reorganization remains traceable.
 
+## GADE topic substance and narrative gate
+
+For GADE research and practice features aimed at curious readers outside the AI industry, evaluate substance before committing to a long article. Identify what happened, why it matters, and the concrete actions, observations or outcomes available to explain it. A topical title, benchmark score, framework or capability claim alone is not enough. If the source mainly supports definitions and qualifications, prefer a shorter item or explain that the topic needs stronger material; do not stretch it into a feature. Do not require every format to have a discovery story: a useful comparison or practical explanation can qualify when it delivers concrete reader value.
+
+Use the reader-approved Claude biological-system rewrite as an editorial pattern, not a mandatory subject or template:
+
+- Open with what was found or achieved and why readers should care. Add background only when needed to understand the next action.
+- Follow one main thread. In a discovery feature, this may be `initial question → investigation → unexpected observation → verification → what remains unknown`. Each section should advance that thread instead of introducing another technical discussion.
+- Explain specialist terms at the moment they become necessary. Describe the action and meaning first; avoid stacks of unfamiliar nouns or acronyms. Readers should not need to learn an entire field before understanding the result.
+- Make substance come from what someone did, what they observed, and what followed. Keep numbers only when they help readers assess scale or evidence; avoid detailed agent configurations, test ratios and methodological branches that interrupt the central account.
+- Retain limitations that change the conclusion, integrated where the evidence is explained. Consolidate routine process disclosures in the source note; never simplify by making the result more certain.
+- Let GADE's perspective appear through a specific research or application question. Do not append a generic paragraph about expert value or force every article to serve customer acquisition.
+
+Before HTML formatting, read the article continuously as a reader unfamiliar with the field. Can they explain what happened, how it happened and what the evidence establishes without rereading? If not, rebuild the sequence and remove detours rather than merely shortening sentences. Do not treat publication-ready formatting as evidence that the article is readable.
+
 ## Chinese readability and editorial voice
 
 Write natural Chinese for curious readers, including people outside the AI industry. Preserve technical precision, but explain ideas through actions and situations before naming abstractions.

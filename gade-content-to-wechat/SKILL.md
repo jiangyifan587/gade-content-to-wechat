@@ -71,7 +71,7 @@ Do not turn a company disclosure into an independent finding. Do not silently st
 
 ### 4. Redesign the article logic
 
-Do not perform sentence-by-sentence substitution. Rebuild the structure around the reader's central question while retaining the source's facts, causal chain, evidence, caveats, and attribution.
+Do not perform sentence-by-sentence substitution. Rebuild the structure around the reader's central question while retaining the source's facts, causal chain, evidence, caveats, and attribution. For GADE research features, apply the topic-substance and narrative gate in `references/editorial-workflow.md` before drafting: lead with the concrete result, follow one main thread, and explain terms only as needed.
 
 Create:
 
