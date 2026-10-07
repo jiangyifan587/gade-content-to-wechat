@@ -89,15 +89,13 @@ Use `assets/wechat-body-only-template.html` and `assets/wechat-footer-only-templ
 
 Do not include the title, summary, author, cover, original/reprint declaration, or account card in the split files; those remain native WeChat fields or components. Do not use split delivery when the user has not asked for manual indentation and the normal complete HTML already pastes correctly.
 
-## Long-article image rhythm
+## Optional body images
 
-For articles with 8 or more sections, recommend three images:
+Default to a text-only body with a separate cover. Do not prescribe an image count from the number of article sections. Produce body imagery only when requested; when an authentic evidence image or a diagram would materially improve understanding, briefly suggest its purpose rather than creating it automatically.
 
-1. After the conceptual setup or section 02.
-2. Near the midpoint, typically after section 05.
-3. Before the final analytical turn, typically after section 08.
+When the user asks for no body images, omit image placeholders, captions, insertion instructions and separate body-image files. This preference does not remove the cover unless the user also requests that.
 
-Images should be editorial, restrained, and consistent with the selected topic palette and with one another. GADE green may appear as an accent but is not required. Do not insert generic AI brains, robots, neon circuitry, or decorative stock technology.
+For requested body images, follow `visual-workflow.md` and keep the imagery relevant and restrained.
 
 ## QA checklist
 

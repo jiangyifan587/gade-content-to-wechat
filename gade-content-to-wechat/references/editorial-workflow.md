@@ -32,6 +32,25 @@ Write a faithful feature article, not a transcript or article disguised by synon
 
 For news, distinguish event chronology from analysis. For interviews, preserve speaker attribution and follow the source's argumentative sequence unless a clearer thematic reorganization remains traceable.
 
+## Chinese readability and editorial voice
+
+Write natural Chinese for curious readers, including people outside the AI industry. Preserve technical precision, but explain ideas through actions and situations before naming abstractions.
+
+- Prefer concrete subjects and verbs. For example, explain `任务状态` as `已经做了什么，接下来从哪里继续`, and `完成标准` as `怎样才算做完`. Keep a technical term when it adds precision; do not mechanically replace every term with colloquial wording.
+- Organize around one reader question. A concrete example can connect several sections when it helps; do not force a recurring example into every article. Mark an invented scenario as hypothetical at its first use, and never imply it was demonstrated by the source.
+- Use headings that express the section's actual issue, such as `昨天没做完，今天从哪里接着做？`, rather than stacks of abstract nouns. Vary headings; not every heading needs to be a question.
+- Remove translation-like phrasing and empty analytical bridges such as `这提供了一个观察窗口` or `这把一个判断问题带到了产品里` when the next sentence can state the point directly.
+- Integrate GADE's perspective through a specific question or implication. Avoid repeatedly asserting the value of experts without explaining what judgment they contribute.
+- Before formatting, read the draft as continuous Chinese prose. Check unclear subjects, long noun phrases, abrupt transitions, repeated explanations and sentences a reader must reread. Improve the article's argument and language, not just sentence length.
+
+## Attribution without repeated caveats
+
+Keep claim-level attribution and material limitations: `Meta 表示`, an unknown experimental outcome, a research-preview status, or a known failure may be necessary to understand the evidence.
+
+Put editorial process disclosures (not independently tested, video coverage, verification cutoff, source access) in the closing source note by default. Do not repeatedly interrupt the body with generic reminders such as `上述设计是公司公布的方案，不能据此认定实际使用已经没有问题`, `公开说明不能替代独立验证`, or `这个例子不是产品实测` once the source attribution and hypothetical status are already clear. If a sentence would otherwise mislead, qualify that sentence specifically instead of adding a blanket disclaimer.
+
+Removing redundant caveats must never strengthen a company claim into an established fact or remove a limitation material to the article's conclusion.
+
 ## Title package
 
 Return one recommended title and four genuinely different alternatives:

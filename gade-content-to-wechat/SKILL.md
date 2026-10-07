@@ -82,7 +82,7 @@ Create:
 - a conclusion that follows from the source and does not invent a new thesis;
 - a transparent source and editing note.
 
-Use clear Chinese, 2–3 sentences per paragraph, concise transitions, and sparse emphasis. Explain specialist terms at first use. Prefer faithful paraphrase over long quotations.
+Use natural, concrete Chinese, 2–3 sentences per paragraph, concise transitions, and sparse emphasis. Apply the readability and attribution guidance in `references/editorial-workflow.md`: preserve necessary claim-level qualifications, and consolidate routine process disclosures in the source note. Explain specialist terms at first use. Prefer faithful paraphrase over long quotations.
 
 ### 5. Produce the visual package
 
@@ -93,7 +93,8 @@ Follow `references/visual-workflow.md`.
 - Choose colors from the article subject, source imagery, environment, and editorial mood. GADE green is optional; do not force one palette across unrelated articles.
 - Preserve GADE continuity through restraint, hierarchy, tactile realism, disciplined composition, and the surrounding HTML.
 - Reject generic AI imagery, pseudo-text, robots, glowing brains, neon circuitry, fake interfaces, fabricated news scenes, or implausible scientific equipment.
-- Recommend or produce only images that add explanation, evidence, pacing, or a verifiable source.
+- Body imagery is optional. For this GADE workflow, default to a text-only body and a cover; produce body images when the user requests them. A genuinely useful evidence image or explanatory diagram may be suggested briefly, but do not create an extra asset package by default. If the user asks for no body images, omit diagrams, illustrations, insertion instructions, and body-image deliverables.
+- Recommend or produce only images that add explanation or verifiable evidence; article length alone does not justify images.
 
 ### 6. Format the WeChat article
 

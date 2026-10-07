@@ -180,7 +180,7 @@ The cover passes only when all are true:
 
 ## Body-image recommendations
 
-Recommend 1–3 images based on article length and information needs. Each recommendation must include:
+Body images are optional; default to a text-only body. Do not produce or prescribe body images merely because an article is long. If the user requests them, or asks to review a useful evidence-image or diagram proposal, each recommendation must include:
 
 ```text
 插入位置：
@@ -202,4 +202,4 @@ Prefer images that add information:
 - a restrained editorial metaphor for an abstract concept;
 - a timeline, comparison, or closed-loop diagram when relationships matter.
 
-Do not fill every section with decoration. For articles with eight or more sections, three well-spaced images are usually enough.
+Do not fill sections with decoration or set a quota by article length. If the user asks for no body images, omit the body-image plan and files; keep the cover unless it is also declined.
